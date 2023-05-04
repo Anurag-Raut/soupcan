@@ -709,6 +709,7 @@ browser.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
           textArea.style["backgroundColor"] = bodyBackgroundColor;
           textArea.style["color"] = textColor;
           textArea.style["border-color"] = textColor;
+          textArea?.focus();
         }
         textArea.after(clonedTweetButton);
 
@@ -727,7 +728,7 @@ browser.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
           
           updateAllLabels();
           sendLabel("transphobe", identifier, sendResponse, localKey, submitReason);
-        },{once:true});
+        });
         return true;
       }
     } catch (error) {
